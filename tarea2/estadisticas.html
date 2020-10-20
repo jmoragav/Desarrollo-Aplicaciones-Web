@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--suppress ALL 
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas</title>
+    <style>
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            margin: 0 !important;
+
+        }
+
+        .titulo {
+            font-size: 50px;
+            width: 100%;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .negrita {
+            font-weight: 800;
+        }
+
+        .subtitulo{
+
+            font-size: 20px;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+          
+
+        }
+        @media screen and (max-width: 500px) {
+            .negrita {
+                font-weight: 300;
+            }
+        }
+
+        .main {
+            width: 70%;
+            background-color: rgb(171, 240, 197);
+            border-radius: 10px;
+            padding: 30px;
+            margin-left: 180px;
+            margin-top: 20px;
+            box-shadow: rgb(171, 240, 197)2px 3px 11px 4px;
+            font-weight: 300;
+        }
+
+        
+
+        input, select {
+            padding: 10px;
+            border-radius: 5px;
+            
+            
+        }
+
+     
+      
+
+        .menu .entrada {
+            color: green;
+            display: inline-block;
+            padding: 10px;
+            
+        }
+
+        .main .entrada {
+            margin-bottom: 15px;
+        }
+
+
+       
+
+        .botones {
+            text-align: center;
+        }
+
+        .menu {
+            text-align: center;
+            width: 100%;
+            font-size: 20px;
+            background-color: rgb(171, 240, 197);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color:white;
+        }
+
+        .seccion{
+
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            background-color:rgb(253, 253, 253);
+            border-radius: 10px;
+        }
+
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            }
+
+
+        .active, .collapsible:hover {
+            background-color: #ccc;
+            }       
+
+
+        .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: #f1f1f1;
+            }
+
+            .tabla{
+            padding-left:150px;
+            display:inline-block; 
+
+
+        }
+
+
+        .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .styled-table thead tr {
+        background-color: #24dba4;
+        color: #ffffff;
+        text-align: left;
+        }
+
+
+        .styled-table th,
+        .styled-table td {
+        padding: 12px 15px;
+        }
+
+
+    
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #24dba4;
+        }
+
+        .imageContainer{
+
+
+            padding-left: 30%;
+        }
+            
+
+
+
+    </style>
+
+    <script src="scrip.js"></script>
+</head>
+
+
+<body>
+
+<div class="menu entrada">
+
+    <div class="entrada">
+        <a href="./index.html">Home</a>
+    </div>
+
+</div>
+
+<div class="titulo negrita">Estadísticas</div>
+<div class="main">
+
+    <form id="misestadisticas" method="post" >
+
+            
+        <div class="subtitulo negrita">Domicilios censados por dia</div>
+        <div class="seccion">
+            <div class="imageContainer">
+                <img src ="domicilios.jpg" id="domicilios" alt="domicilios"  width="430" height="290" />
+              </div>
+        
+        
+        </div>
+
+        <div class="subtitulo negrita">Mascotas por tipo</div>
+        <div class="seccion">
+            
+            <div class="imageContainer">
+                <img src ="tipo.jpg" id="tipo" alt="tipo" width="430" height="290"  />
+              </div>
+        
+        </div>
+
+
+        <div class="subtitulo negrita">Relacion Perros/Gatos</div>
+        <div class="seccion">
+            
+            <div class="imageContainer">
+                <img src ="relacion.jpg" id="relacion" alt="relacion" width="430" height="290" />
+              </div>
+        
+        </div>
+       
+       
+
+
+
+        
+    
+    </form>
+
+</div>
+
+</body>
+
+
+</html>

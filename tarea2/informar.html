@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!--suppress ALL 
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Información Mascota</title>
+    <style>
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            margin: 0 !important;
+
+        }
+
+        .titulo {
+            font-size: 50px;
+            width: 100%;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .negrita {
+            font-weight: 800;
+        }
+
+        .subtitulo{
+
+            font-size: 20px;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+          
+
+        }
+        @media screen and (max-width: 500px) {
+            .negrita {
+                font-weight: 300;
+            }
+        }
+
+        .main {
+            width: 70%;
+            background-color: rgb(171, 240, 197);
+            border-radius: 10px;
+            padding: 30px;
+            margin-left: 15%;
+            margin-top: 20px;
+            box-shadow: rgb(171, 240, 197)2px 3px 11px 4px;
+            font-weight: 300;
+        }
+
+        
+
+        input, select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            
+        }
+
+        .leyenda {
+            width: 20%;
+            display: inline-block;
+        }
+
+        #archivo {
+            border: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .menu .entrada {
+            color: green;
+            display: inline-block;
+            padding: 10px;
+            
+        }
+
+        .main .entrada {
+            margin-bottom: 15px;
+        }
+
+        #enviar {
+            background-color: green;
+            padding: 10px;
+            border-radius: 10px;
+            border: 0;
+            outline: 0;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        #enviar:hover {
+            color: aliceblue;
+            box-shadow: #adadad30 0 0 9px 2px;
+            cursor: pointer;
+        }
+
+        .botones {
+            text-align: center;
+        }
+
+        .menu {
+            text-align: center;
+            width: 100%;
+            font-size: 20px;
+            background-color: rgb(171, 240, 197);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color:white;
+        }
+
+        .seccion{
+
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            background-color:rgb(253, 253, 253);
+            border-radius: 10px;
+        }
+
+
+        
+    
+
+        
+        #error {
+            background-color: #f38d8d;
+            display: none;
+            font-size: 20px;
+            left: 0;
+            padding: 20px;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+
+
+       
+
+        
+
+    </style>
+
+
+
+<script src="scrip.js"> </script>
+
+
+
+
+</head>
+
+
+<body  onload="initApp()">
+
+<div class="menu entrada">
+
+    <div class="entrada">
+        <a href="./index.html">Home</a>
+    </div>
+
+</div>
+
+<div class="titulo negrita">Formulario Mascotas</div>
+<div class="main">
+
+    <form id="miformulario" method="post" onsubmit="return validacionFormulario()" >
+
+        <div class="subtitulo negrita">Dirección</div>
+        <div class="seccion"> 
+        <div class="entrada">
+
+            <div class="leyenda">Región</div>
+                <select name="region" id="region" required="required" onchange="comunaSelect()">
+                <option value="" selected="selected">Seleccione una región</option>
+                
+
+                <!---wip-->
+                </select>
+
+
+                
+
+        </div>
+
+
+
+        <div class="entrada">
+
+            <div class="leyenda">Comuna</div>
+                <select name="comuna" id="comuna" required="required">
+                <option value="" selected="selected">Seleccione una comuna</option>
+           
+
+                <!---wip-->
+                </select>
+
+
+                
+
+        </div>
+
+        
+        <div class="entrada">
+
+            <div class="leyenda">Nombre Calle</div>
+
+            <input name="calle" type="text" id="calle" size="100" maxlength="250" required="required"  />
+
+        </div>
+
+        <div class="entrada">
+
+            <div class="leyenda">Numero</div>
+
+            <input name="numero" type="text" id="numero" size="20" maxlength="20" required="required"/>
+
+        </div>
+
+
+        <div class="entrada">
+
+            <div class="leyenda">Sector</div>
+
+            <input name="sector" type="text" id="sector" size="100" maxlength="100"/>
+
+        </div>
+
+
+        </div>
+
+        <div class="subtitulo negrita">Datos de contacto</div>
+        <div class="seccion"> 
+        
+
+            <div class="entrada">
+
+                <div class="leyenda">Nombre</div>
+    
+                <input name="nombre" type="text" id="nombre" size="100" maxlength="200" required="required"/>
+    
+            </div>
+
+
+            <div class="entrada">
+
+                <div class="leyenda">Email</div>
+    
+                <input name="email" type="email" id="email" size="100" maxlength="200" required="required"/>
+    
+            </div>
+
+
+            <div class="entrada">
+
+                <div class="leyenda">Numero de celular</div>
+    
+                <input name="celular" type="text" id="celular" size="15" maxlength="20" required="required"/>
+    
+            </div>
+
+
+        </div>
+
+        <div class="subtitulo negrita">Información de Mascotas</div>
+        <div class="seccion" id="seccion-mascotas">        
+        <div class="leyenda">Mascota 1</div>
+        <div class="seccion">    
+
+
+        
+        <div class="entrada">
+                <div class="seleccion" id="seleccion-bloque1">
+                <div class="leyenda">Tipo</div>
+                    <select name="tipo-mascota" id="tipo-mascota1" required="required" onchange="enableOther('seleccion-bloque1',this.id)">
+                    <option value="" selected="selected">Seleccione un tipo</option>
+                    <option value="1">Perro</option>
+                    <option value="2">Gato</option>
+                    <option value="3">Pez</option>
+                    <option value="4">Tortuga</option>
+                    <option value="5">Hamster</option>
+                    <option value="6">Loro</option>
+                    <option value="7">Iguana</option>
+                    <option value="8">Araña</option>
+                    <option value="9">Otro</option>
+                    
+    
+                    <!---wip-->
+                    </select>
+    
+                <div id="otro-1"></div>
+                    
+                </div>
+        </div>
+
+
+        <div class="entrada">
+
+            <div class="leyenda">Edad en Años</div>
+
+            <input name="edad-mascota" type="text" id="edad-mascota1" size="5" maxlength="3" required="required"/>
+
+        </div>
+
+
+
+        <div class="entrada">
+
+            <div class="leyenda">Color</div>
+
+            <input name="color-mascota" type="text" id="color-mascota1" size="30" maxlength="30" required="required"/>
+
+        </div>
+
+        <div class="entrada">
+
+            <div class="leyenda">Raza</div>
+
+            <input name="raza-mascota" type="text" id="raza-mascota1" size="30" maxlength="30" required="required"/>
+
+        </div>
+
+
+        <div class="entrada">
+
+            <div class="leyenda">Esterilizado</div>
+                <select name="esterilizado-mascota" id="esterilizado-mascota1" required="required">
+                <option value="" selected="selected">Seleccione una opción</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+                <option value="3">No aplica</option>
+                
+
+                <!---wip-->
+                </select>
+
+
+                
+
+        </div>
+
+        <div class="entrada">
+
+            <div class="leyenda">Vacunas al dia</div>
+                <select name="vacunas-mascota" id="vacunas-mascota1" required="required">
+                <option value="" selected="selected">Seleccione una opción</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+                <option value="3">No aplica</option>
+                
+
+                <!---wip-->
+                </select>
+
+
+                
+        
+        </div>
+
+
+
+
+        <div class="entrada">
+
+            <div class="leyenda">Foto</div>
+            <div class="grupofotos" id="grupo-fotos1">
+
+            <input type='file'  name="foto-mascota" id='foto-mascota1-1' required='required' accept='image/*' >
+           
+            </div>
+            <button id="agregar-foto1" type="button" onclick= "addInput('grupo-fotos1',0)">Agregar otra foto</button>
+        </div>
+
+     
+        
+       
+        </div>
+
+        
+
+        </div>
+
+        <div class="entrada botones">
+            <button id="agregar-mascota" type="button" onclick= "addPet()" >Agregar mascota</button>
+        </div>
+
+        <div class="entrada botones">
+            <button id="enviar" type="button" onclick="confirmation()">Enviar información de este domicilio</button>
+    </div>
+
+        
+    
+    </form>
+
+</div>
+
+<div id="error">Este es un mensaje de error</div>
+
+
+
+</body>
+
+
+</html>
