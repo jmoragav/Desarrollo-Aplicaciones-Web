@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<!--suppress ALL 
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Mascotas</title>
+    <style>
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            margin: 0 !important;
+
+        }
+
+        .titulo {
+            font-size: 50px;
+            width: 100%;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .negrita {
+            font-weight: 800;
+        }
+
+        .subtitulo{
+
+            font-size: 20px;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+          
+
+        }
+        @media screen and (max-width: 500px) {
+            .negrita {
+                font-weight: 300;
+            }
+        }
+
+        .main {
+            width: 70%;
+            background-color: rgb(171, 240, 197);
+            border-radius: 10px;
+            padding: 30px;
+            margin-left: 15%;
+            margin-top: 20px;
+            box-shadow: rgb(171, 240, 197)2px 3px 11px 4px;
+            font-weight: 300;
+        }
+
+        
+
+        input, select {
+            padding: 10px;
+            border-radius: 5px;
+            
+            
+        }
+
+     
+      
+
+        .menu .entrada {
+            color: green;
+            display: inline-block;
+            padding: 10px;
+            
+        }
+
+        .main .entrada {
+            margin-bottom: 15px;
+        }
+
+
+       
+
+        .botones {
+            text-align: center;
+        }
+
+        .menu {
+            text-align: center;
+            width: 100%;
+            font-size: 20px;
+            background-color: rgb(171, 240, 197);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color:white;
+        }
+
+        .seccion{
+
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            background-color:rgb(253, 253, 253);
+            border-radius: 10px;
+        }
+
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            
+            width: 97%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+            margin: auto; 
+            
+
+            }
+
+
+        .active, .collapsible:hover {
+            background-color: #ccc;
+            }       
+
+
+        .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: #f1f1f1;
+            }
+
+            
+        .tabla{
+            padding-left:120px;
+         
+
+
+        }
+
+        .styled-table {
+        
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .styled-table thead tr {
+         
+        background-color: #24dba4;
+        color: #ffffff;
+        text-align: left;
+        }
+
+
+        .styled-table th,
+        .styled-table td {
+        padding: 12px 15px;
+        }
+
+
+    
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #24dba4;
+        }
+
+       
+
+
+    </style>
+
+    <script src="scrip.js"></script>
+</head>
+
+
+<body >
+
+<div class="menu entrada">
+
+    <div class="entrada">
+        <a href="./index.html">Home</a>
+    </div>
+
+</div>
+
+<div class="titulo negrita">Listado de Mascotas</div>
+<div class="main">
+
+    <form id="milistado" method="post" >
+
+        <div class="info">
+
+
+            
+            <div class="seccion">
+                <div class="tabla">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Ingreso</th>
+                            <th>Comuna</th>
+                            <th>Nombre Calle</th>
+                            <th>Nombre contacto</th>
+                            <th>Total Mascotas</th>
+                            <th>Total Fotos</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <td>20/04/2020</td>
+                            <td>Maipú</td>
+                            <td>8 de Marzo #3025</td>
+                            <td>Erick Acevedo</td>
+                            <td>1</td>
+                            <td>1</td>
+                        
+                        </tr>
+                        
+                        <!-- and so on... -->
+                    </tbody>
+                </table>
+                </div>
+           
+            <button type="button" class="collapsible" onclick="abrirCollapsable()">Mostrar Datos</button>
+            <div class="content">
+                <div class="subtitulo">Direccion</div>
+                <div class="seccion">
+                    Región: Metropolitana
+
+                    <br>
+                    Comuna: Maipú
+                    <br>
+                    Nombre Calle: 8 de Marzo
+                    <br>
+                    Número: 3025
+                    
+                </div>
+
+                <div class="subtitulo">Datos de contacto </div>
+                <div class="seccion">
+                    Nombre: Erick Acevedo
+
+                    <br>
+                    Email: eacevedo2@gmail.com
+                    <br>
+                    Número de celular: +56978451236
+                
+                    
+                </div>
+                <div class="subtitulo">Información de Mascotas </div>
+                <div class="seccion">
+                    Tipo: Perro
+
+                    <br>
+                    Edad en Años: 3
+                    <br>
+                    Color: Cafe
+                    <br>
+                    Raza: Pastor Aleman
+                    <br>
+                    Esterilizado: Si
+                    <br>
+                    Vacunas al dia: No
+                    <br>
+                    Foto:<br>
+                    <div class="imageContainer">
+                        <img src ="pastor.jpg" id="pastor" alt="pastor" width="320" height="240" onclick="zoomIn(this.id)"/>
+                      </div>
+                   
+           
+                    
+                </div>
+            </div>
+            
+        </div>
+
+    <br>
+
+        <div class="seccion">
+        <div class="tabla">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Fecha Ingreso</th>
+                    <th>Comuna</th>
+                    <th>Nombre Calle</th>
+                    <th>Nombre contacto</th>
+                    <th>Total Mascotas</th>
+                    <th>Total Fotos</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr>
+                    <td>30/09/2020</td>
+                    <td>Iquique</td>
+                    <td>Playa Quintero #3539</td>
+                    <td>Joaquin Moraga</td>
+                    <td>2</td>
+                    <td>3</td>
+                
+                </tr>
+                
+                <!-- and so on... -->
+            </tbody>
+        </table>
+        </div>
+
+
+            
+
+            <button type="button" class="collapsible" onclick="abrirCollapsable()">Mostrar Datos</button>
+            <div class="content">
+                <div class="subtitulo">Direccion</div>
+                <div class="seccion">
+                    Región: Tarapacá
+
+                    <br>
+                    Comuna: Iquique
+                    <br>
+                    Nombre Calle: Playa Quintero
+                    <br>
+                    Número: 3539
+                    
+                </div>
+
+                <div class="subtitulo">Datos de contacto </div>
+                <div class="seccion">
+                    Nombre: Joaquin Moraga
+
+                    <br>
+                    Email: joaquinmoragav@gmail.com
+                    <br>
+                    Número de celular: +56962757190
+                
+                    
+                </div>
+                <div class="subtitulo">Información de Mascotas </div>
+                <div class="seccion">
+                    Tipo: Gato
+
+                    <br>
+                    Edad en Años: 1
+                    <br>
+                    Color: Naranja
+                    <br>
+                    Raza: Atigrado
+                    <br>
+                    Esterilizado: Si
+                    <br>
+                    Vacunas al dia: si
+                    <br>
+                    Foto:<br>
+                    <div class="imageContainer">
+                        <img src ="fatcat1.jpg" id="fatcato1" alt="fatcato1" width="320" height="240" onclick="zoomIn(this.id)"/></div><br>
+                    <div class="imageContainer">
+                        <img src ="fatcat2.jpg" id="fatcato2" alt="fatcato2" width="320" height="240" onclick="zoomIn(this.id)"/>
+                    </div>
+                    <br>
+
+
+                    Tipo: Erizo
+
+                    <br>
+                    Edad en Años: 5
+                    <br>
+                    Color: Azul
+                    <br>
+                    Raza: Fast
+                    <br>
+                    Esterilizado: Si
+                    <br>
+                    Vacunas al dia: No
+                    <br>
+                    Foto:<br>
+                    <div class="imageContainer">
+                        <img src ="sanic.jpg" id="sanic" alt="sanic" width="320" height="240" onclick="zoomIn(this.id)"/></div>><br>
+                    
+                    
+
+
+
+
+                </div>
+            </div>
+        </div>
+    <br>
+        <div class="seccion">
+            <div class="tabla">
+
+                
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Ingreso</th>
+                            <th>Comuna</th>
+                            <th>Nombre Calle</th>
+                            <th>Nombre contacto</th>
+                            <th>Total Mascotas</th>
+                            <th>Total Fotos</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <td>20/08/2020</td>
+                            <td>Santiago</td>
+                            <td>Roberto Espinoza #3021</td>
+                            <td>Mauro Guerrero</td>
+                            <td>1</td>
+                            <td>1</td>
+                        
+                        </tr>
+                        
+                        <!-- and so on... -->
+                    </tbody>
+                </table>
+
+            </div>
+
+        
+            <button type="button" class="collapsible" onclick="abrirCollapsable()">Mostrar Datos</button>
+            <div class="content">
+                <div class="subtitulo">Direccion</div>
+                <div class="seccion">
+                    Región: Metropolitana
+
+                    <br>
+                    Comuna: Santiago
+                    <br>
+                    Nombre Calle: Roberto Espinoza
+                    <br>
+                    Número: 3021
+                    
+                </div>
+
+                <div class="subtitulo">Datos de contacto </div>
+                <div class="seccion">
+                    Nombre: Mauro Guerrero
+
+                    <br>
+                    Email: menta.fresca.bamboo@gmail.com
+                    <br>
+                    Número de celular: +56966696666
+                
+                    
+                </div>
+                <div class="subtitulo">Información de Mascotas </div>
+                <div class="seccion">
+                    Tipo: Pez
+
+                    <br>
+                    Edad en Años: 1
+                    <br>
+                    Color: Naranja
+                    <br>
+                    Raza: Pez Payazo
+                    <br>
+                    Esterilizado: No aplica
+                    <br>
+                    Vacunas al dia: No aplica
+                    <br>
+                    Foto:<br>
+                    <div class="imageContainer">
+                        <img src ="pez-payaso.jpg" id="pez-payaso" alt="pez-payaso" width="320" height="240" onclick="zoomIn(this.id)"/></div><br>
+                    
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    <br>
+    <div class="seccion">
+        <div class="tabla">
+            
+          
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Ingreso</th>
+                            <th>Comuna</th>
+                            <th>Nombre Calle</th>
+                            <th>Nombre contacto</th>
+                            <th>Total Mascotas</th>
+                            <th>Total Fotos</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <td>28/08/2020</td>
+                            <td>Arica</td>
+                            <td>Gonzalo Cerda #3841</td>
+                            <td>Javiera Quispe</td>
+                            <td>2</td>
+                            <td>2</td>
+                        
+                        </tr>
+                        
+                        <!-- and so on... -->
+                    </tbody>
+                </table>
+             
+
+        </div>
+
+
+            <button type="button" class="collapsible" onclick="abrirCollapsable()">Mostrar Datos</button>
+            <div class="content">
+                <div class="subtitulo">Direccion</div>
+                <div class="seccion">
+                    Región: Arica y parinacota
+
+                    <br>
+                    Comuna: Arica
+                    <br>
+                    Nombre Calle: Gonzalo Cerda
+                    <br>
+                    Número: 3841
+                    
+                </div>
+
+                <div class="subtitulo">Datos de contacto </div>
+                <div class="seccion">
+                    Nombre: Javiera Quispe
+
+                    <br>
+                    Email: jquispev@outlook.com
+                    <br>
+                    Número de celular: +56983138313
+                
+                    
+                </div>
+                <div class="subtitulo">Información de Mascotas </div>
+                <div class="seccion">
+                    Tipo: Tortuga
+
+                    <br>
+                    Edad en Años: 5
+                    <br>
+                    Color: Verde    
+                    <br>
+                    Raza: Orejas Rojas
+                    <br>
+                    Esterilizado: No aplica
+                    <br>
+                    Vacunas al dia: No aplica
+                    <br>
+                    Foto:<br>
+                    <div class="imageContainer">
+                        <img src ="tortuga.jpg" id="tortuga" alt="tortuga" width="320" height="240" onclick="zoomIn(this.id)"/></div><br>
+
+
+                        <br>
+
+
+                    Tipo: Perro
+
+                    <br>
+                    Edad en Años: 2
+                    <br>
+                    Color: Blanco
+                    <br>
+                    Raza: Poodle
+                    <br>
+                    Esterilizado: Si
+                    <br>
+                    Vacunas al dia: Si
+                    <br>
+                    Foto:<br>
+                    <div class="imageContainer">
+                        <img src ="poodle.jpg" id="poodle" alt="poodle" width="320" height="240" onclick="zoomIn(this.id)"/></div>><br>
+                    
+                    
+                    
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+
+
+        <div class="seccion">
+            <div class="tabla">
+                
+            
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Fecha Ingreso</th>
+                                <th>Comuna</th>
+                                <th>Nombre Calle</th>
+                                <th>Nombre contacto</th>
+                                <th>Total Mascotas</th>
+                                <th>Total Fotos</th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <tr>
+                                <td>15/06/2020</td>
+                                <td>Concepción</td>
+                                <td>La Unión #3420</td>
+                                <td>Barbara Vallejos</td>
+                                <td>1</td>
+                                <td>1</td>
+                            
+                            </tr>
+                            
+                            <!-- and so on... -->
+                        </tbody>
+                    </table>
+         
+            
+
+            </div>
+
+
+            <button type="button" class="collapsible" onclick="abrirCollapsable()">Mostrar Datos</button>
+            <div class="content">
+                <div class="subtitulo">Direccion</div>
+                <div class="seccion">
+                    Región: Biobío
+
+                    <br>
+                    Comuna: Concepción
+                    <br>
+                    Nombre Calle: La Unión
+                    <br>
+                    Número: 3420
+                    
+                </div>
+
+                <div class="subtitulo">Datos de contacto </div>
+                <div class="seccion">
+                    Nombre: Barbara Vallejos
+
+                    <br>
+                    Email: babivall@gmail.com
+                    <br>
+                    Número de celular: +56975469325
+                
+                    
+                </div>
+                <div class="subtitulo">Información de Mascotas </div>
+                <div class="seccion">
+                    Tipo: Araña
+
+                    <br>
+                    Edad en Años: 1
+                    <br>
+                    Color: Cafe
+                    <br>
+                    Raza: Pollito
+                    <br>
+                    Esterilizado: No aplica
+                    <br>
+                    Vacunas al dia: No aplica
+                    <br>
+                    Foto:<br>
+                    <div class="imageContainer">
+                        <img src ="araña.jpg" id="araña" alt="araña" width="320" height="240" onclick="zoomIn(this.id)"/>
+                      </div>
+                   
+           
+                    
+                </div>
+            </div>
+            </div>
+            
+        </div>
+       
+
+
+
+
+        
+    
+    </form>
+
+</div>
+
+</body>
+
+
+</html>
